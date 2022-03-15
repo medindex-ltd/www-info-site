@@ -1,6 +1,6 @@
 name: Update PRs with Cloudflare Pages Preview URL
 on:
-  pull_request:
+  push:
     branches: [ live ]
 
   # Allows you to run this workflow manually from the Actions tab
