@@ -1,15 +1,27 @@
-# Medindex 'info' page
+# medindex.co.uk
 
 A single-page 'about Medindex' web site for marketing, intros, etc.
 
-## Deployment
+## 📦 Live deployment
 
-The site is automatically deployed to Cloudflare Pages, with the `live` branch available at https://medindex.co.uk
+The site is served via [Cloudflare Pages](https://pages.cloudflare.com/), and integrated with this repository; changes to the `live` branch are automaically deployed to <https://medindex.co.uk>
 
-## Development
+## 🪟 Preview deployments
 
-Open a pull request against the live branch to trigger a preview deployment, the preview URL will be displayed in a comment on the pull request.
+Commits pushed to branches other than `live` will generate [preview deployments](https://developers.cloudflare.com/pages/platform/preview-deployments/). Open a pull request against the live branch to see the preview URL displayed in the PR comments.
 
-Preview deployments are protected by Cloudflare Access zero trust application access, you will need to be member of the [Medindex admins](https://github.com/orgs/medindex-ltd/teams/admins) or [collaborators](https://github.com/orgs/medindex-ltd/teams/collaborators) teams to access the preview site.
+Preview deployments are gated by [Cloudflare Access](https://www.cloudflare.com/en-gb/products/zero-trust/access/) zero trust application access, you will need to be member of the [Medindex admins](https://github.com/orgs/medindex-ltd/teams/admins) or [collaborators](https://github.com/orgs/medindex-ltd/teams/collaborators) teams to access the preview URL.
 
 After validating the preview, merge the PR to deploy the changes to the live site.
+
+## 🔧 Development
+
+The [build configuration](https://developers.cloudflare.com/pages/platform/build-configuration/) for the site uses the [`build.sh`](build.sh) shell script as the build command, with [`output`](output/) as the build directory. If you need to change the build command, you can edit `build.sh`.
+
+💡 Note that the build process will automatically run `npm install`  to install any packages defined in [`package.json`](package.json) that are required for the build.
+
+The Cloudflare [documentation](https://developers.cloudflare.com/pages/platform/build-configuration/#language-support-and-tools) for build configurations describes the language support and tools available by default.
+
+## ✒️ Design considerations
+
+Cloudflare Pages is a [Jamstack](https://jamstack.org) platform, there are a number of [features](https://developers.cloudflare.com/pages/platform/serving-pages/) and [limitations](https://developers.cloudflare.com/pages/platform/known-issues/) to the architecture; see the Cloudflare [documentation](https://developers.cloudflare.com/pages/platform/) for further details.
