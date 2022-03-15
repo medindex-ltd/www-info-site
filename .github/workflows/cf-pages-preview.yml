@@ -1,7 +1,8 @@
 name: Update PRs with Cloudflare Pages Preview URL
 on:
-  push:
-    branches: [ live ]
+  pull_request:
+    branches:
+      - 'live'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -9,20 +10,26 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps:          
+    timeout-minutes: 10
+    steps:
+      - name: 💤 Wait for deployment
+        run: sleep 30
+
       - name: 🪝 Fetch Cloudflare Pages Preview URL
-        uses: WalshyDev/cf-pages-await@v1.1.0
+        uses: zentered/cloudflare-preview-url@v1.2.7
         id: cf-pages
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_GLOBAL_API_KEY }}
+          CLOUDFLARE_ACCOUNT_EMAIL: ${{ secrets.CLOUDFLARE_ACCOUNT_EMAIL }}
+          CLOUDFLARE_ACCOUNT_ID: '04bc5f124118c756daafc753bce351fa'
         with:
-          accountEmail: ${{ secrets.CLOUDFLARE_ACCOUNT_EMAIL  }}
-          apiKey: ${{ secrets.CLOUDFLARE_GLOBAL_API_KEY  }}
-          accountId: '04bc5f124118c756daafc753bce351fa'
-          project: medindex
-          # githubToken: ${{ secrets.GITHUB_TOKEN }}
+          cloudflare_project_id: 'medindex-www-site'
+          wait_until_ready: true
+
       
       - name: 💬 Add comment to PR
         uses: marocchino/sticky-pull-request-comment@v2.2.0
         with:
           header: cf-preview-comment
           message: |
-            Release `${{ github.sha }}` deployed to <https://${{ steps.cf-pages.outputs.alias }}>
+            Release `${{ github.sha }}` deployed to <https://${{ steps.cf-pages.outputs.preview_url }}>
