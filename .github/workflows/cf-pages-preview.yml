@@ -24,6 +24,7 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: '04bc5f124118c756daafc753bce351fa'
         with:
           cloudflare_project_id: 'medindex-www-site'
+          environment: null
           wait_until_ready: true
 
       
