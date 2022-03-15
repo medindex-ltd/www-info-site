@@ -18,7 +18,7 @@ jobs:
           apiKey: ${{ secrets.CLOUDFLARE_GLOBAL_API_KEY  }}
           accountId: '04bc5f124118c756daafc753bce351fa'
           project: medindex
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          # githubToken: ${{ secrets.GITHUB_TOKEN }}
       
       - name: 💬 Add comment to PR
         uses: marocchino/sticky-pull-request-comment@v2.2.0
