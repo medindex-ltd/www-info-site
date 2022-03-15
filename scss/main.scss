@@ -1,0 +1,49 @@
+
+:root {
+
+    --blue: #005EB8;
+
+    --logo-margin: 0 0 2rem;
+    --page-top-padding: 8rem 0 0;
+    --page-top-paragraph: 2rem;
+
+    --screenshots-margin-bottom: 3rem;
+
+    --explainer-text-lead: 2.2rem;
+
+    --key-features-padding: 5rem 0;
+    --key-features-title: 2.7rem;
+
+    --footer-text-margin: 5rem 0 0;
+}
+
+@media only screen and (min-width: 760px) {
+
+    :root {
+    
+        --logo-margin: 0 0 2.5rem;
+        --page-top-padding: 11rem 0 0;
+        --page-top-paragraph: 2.1rem;
+
+        --screenshots-margin-bottom: 5rem;
+    
+        --explainer-text-lead: 2.4rem;
+    
+        --key-features-padding: 7rem 0;
+        --key-features-title: 3.2rem;
+    
+        --footer-text-margin: 8rem 0 0;
+    }
+
+}
+
+
+
+@import "normalise";
+
+@import "page-top";
+@import "screenshots";
+@import "explainer-text";
+@import "key-features";
+
+@import "helpers";

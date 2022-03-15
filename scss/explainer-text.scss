@@ -1,0 +1,6 @@
+.explainer-text { margin: 0 0 5rem; display: flex; flex-wrap: wrap; justify-content: center;
+    .column { max-width: 46rem; margin: 0 auto; }
+    .column:first-child { 
+        p { font-size: var(--explainer-text-lead); color: var(--blue); }
+    }
+}

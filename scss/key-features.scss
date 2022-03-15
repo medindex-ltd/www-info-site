@@ -1,0 +1,12 @@
+.key-features { background: #F7FAFD; padding: var(--key-features-padding); margin: 0 0 5rem;
+    
+    &__title { font-size: var(--key-features-title); color: var(--blue); margin: 0 0 5rem; }
+    &__list { list-style: none; margin: 0 -3rem; padding: 0; display: flex; flex-wrap: wrap; justify-content: center;
+        li { margin: 0 3rem 5rem; max-width: 28rem;  }
+        svg { display: block; margin: 0 auto 3.5rem; }
+    }
+
+
+}
+
+

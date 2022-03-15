@@ -1,0 +1,17 @@
+.page-top { background: var(--blue); color: white; padding: var(--page-top-padding); background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%), var(--blue);
+
+    &:after { display: block; content: ''; width: 100%; padding-bottom: 36%; }
+
+    svg { margin: var(--logo-margin); }
+
+    p { font-size: var(--page-top-paragraph); line-height: 1.5; max-width: 58rem; margin: 0 auto; }
+}
+
+@media only screen and (min-width: 760px) {
+
+    .page-top { 
+
+        &:after { padding-bottom: 28rem; }
+
+    }
+}

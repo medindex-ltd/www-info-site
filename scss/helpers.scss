@@ -1,0 +1,27 @@
+.visually-hidden {
+clip: rect(0 0 0 0);
+clip-path: inset(50%);
+height: 1px;
+overflow: hidden;
+position: absolute;
+white-space: nowrap;
+width: 1px;
+}
+
+.holder { max-width: 102rem; margin: 0 auto; padding: 0 3rem; }
+
+.text-align-c { text-align: center; }
+
+img { max-width: 100%; height: auto; }
+
+p,
+li { font-size: 1.8rem; line-height: 1.5; margin: 0 0 1.6rem; }
+
+
+.padding-b-5 { padding-bottom: 5rem; }
+
+.footer-text { margin: var(--footer-text-margin); display: block; }
+
+a { color: var(--blue); text-decoration: underline; 
+&:hover { text-decoration: none; }
+}
