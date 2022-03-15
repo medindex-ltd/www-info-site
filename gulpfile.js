@@ -20,6 +20,6 @@ gulp.task('styles', function () {
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss(processors))
     .pipe(cleanCSS())
-    .pipe(sourcemaps.write('output/maps/'))
+    .pipe(sourcemaps.write('maps/'))
     .pipe(gulp.dest('output/css/'));
 });
