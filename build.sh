@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-gulp -f gulpfile.js styles
+gulp -f gulpfile.js release
