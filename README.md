@@ -18,12 +18,32 @@ After validating the preview, merge the PR to deploy the changes to the live sit
 
 ## 🔧 Development
 
-The [build configuration](https://developers.cloudflare.com/pages/platform/build-configuration/) for the site uses the [`build.sh`](build.sh) shell script as the build command, with [`output`](output/) as the build directory. If you need to change the build command, you can edit `build.sh`. Fatal errors in the build script will cause the preview deployment to fail; verify the preview deployment succeeded following any changes, or roll back if necessary.
+### 🧰 Requirements
+
+- [Node.js](https://nodejs.org/)
+- [npm](https://www.npmjs.com/)
+
+### ⚡️ Quick start
+
+```shell
+$ git clone git@github.com:medindex-ltd/www-info-site.git
+$ cd www-info-site
+$ npm install
+$ gulp
+```
+
+### 👩‍💻 Workflow
+
+For local development, the default `gulp` task will generate the static files in `output/` and start a local web server to preview the output at <http://localhost:3000>. Changes to the source files (in `src/`) will trigger a rebuild and reload the browser page.
+
+### 🚀 Release builds
+
+The release [build configuration](https://developers.cloudflare.com/pages/platform/build-configuration/) for the site uses a shell script as the build command, with `output` as the build directory. If you need to change the build command, you can edit shell script, [`build.sh`](build.sh), and/or the Gulp recipe file, [`gulpfile.js`](gulpfile.js), accordingly. Fatal errors in the build script will cause the preview deployment to fail; verify the preview deployment succeeded following any changes, or roll back if necessary.
 
 💡 Note that the build process will automatically run `npm install`  to install any packages defined in [`package.json`](package.json) that are required for the build.
 
 The Cloudflare [documentation](https://developers.cloudflare.com/pages/platform/build-configuration/#language-support-and-tools) for build configurations describes the language support and tools available by default.
 
-## ✒️ Design considerations
+### ✒️ Design considerations
 
 Cloudflare Pages is a lightweight [Jamstack](https://jamstack.org) platform, there are a number of [features](https://developers.cloudflare.com/pages/platform/serving-pages/) and [limitations](https://developers.cloudflare.com/pages/platform/known-issues/) to the architecture; see the Cloudflare [documentation](https://developers.cloudflare.com/pages/platform/) for further details.
