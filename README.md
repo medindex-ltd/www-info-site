@@ -6,7 +6,7 @@ A single-page 'about Medindex' web site for marketing, intros, etc.
 
 The site is served via [Cloudflare Pages](https://pages.cloudflare.com/), and integrated with this repository; changes to the `live` branch are automatically deployed to <https://medindex.co.uk>
 
-💡 Changes to the live branch must be made via merging a pull request, not direct commits. PRs must be approved before they can be merged.
+💡 Changes to the live branch must be made via merging a pull request, not direct commits. PRs must be approved by a [code owner](CODEOWNERS) before they can be merged.
 
 ## 🪟 Preview deployments
 
