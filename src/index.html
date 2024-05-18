@@ -29,14 +29,18 @@
 
         <div class="screenshots">
             <div class="slide active" id="slide1">
-                <img src="/img/screen-clinician.jpg" alt="A Medindex platform showing information for clinicians" width="590" height="378" />
+                <div class="slide__image">
+                    <img src="/img/screen-clinician-full.webp" alt="A Medindex platform showing information for clinicians" width="100%" />
+                </div>
                 <div class="slide__label">Clinician view</div>
             </div>
             <div class="slide" id="slide2">
-                <img src="/img/screen-patients.jpg" alt="A Medindex platform showing information for patients and carers" width="590" height="378" />
+                <div class="slide__image">
+                    <img src="/img/screen-patients-full.webp" alt="A Medindex platform showing information for patients and carers" width="100%" />
+                </div>
                 <div class="slide__label">Patient and carer view</div>
             </div>
-            <img class="screenshots__laptop" src="/img/laptop.png" alt="" width="763" height="460" />
+            <img class="screenshots__laptop" src="/img/laptop.webp" alt="" width="763" height="460" />
             
         </div>
 
@@ -81,17 +85,37 @@
 
         </section>
 
-        <div class="holder text-align-c padding-b-5">
+        <section class="current-platforms text-align-c">
+            <div class="holder">
+                <h2 class="current-platforms__title">Current Platforms</h2>
+                <ul class="current-platforms__list">
+                    <li>
+                        <a href="https://hpal.medindex.co.uk/">
+                            <img src="/img/nwl-ics-logo.png" height="95" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://mse.medindex.co.uk/">
+                            <img src="/img/mse-ics-logo.svg" height="72" />
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
 
-        <p>Medindex has been co-designed by GPs and secondary care professionals. Medindex is led by <a href="https://uk.linkedin.com/in/poppy-freeman-5405151a5" target="_blank">Dr Poppy Freeman</a>, a GP who founded the award winning Camden GP Website and has developed clinical and patient facing websites for several CCGs across London.</p>
-        <p>For more information please contact <a href="mailto:admin@medindex.co.uk">admin@medindex.co.uk</a></p>
+        <section class="about-footer text-align-c">
+            <div class="holder padding-b-5">
 
-        <small class="footer-text">
-            Medindex Ltd is a company registered in England and Wales with company number 12376470, VAT registration 372569467. &copy; Medindex Ltd 2024.<br />
-            Medindex is compliant with the NHS Digital Technology Assessment Criteria (DTAC) and <a href="/assets/medindex_cyberessentials_certificate_2024.pdf" target="_blank" title="Verify our Cyber Essentials certificate">Cyber Essentials certified</a>.
-        </small>
+            <p>Medindex has been co-designed by GPs and secondary care professionals. Medindex is led by <a href="https://uk.linkedin.com/in/poppy-freeman-5405151a5" target="_blank">Dr Poppy Freeman</a>, a GP who founded the award winning Camden GP Website and has developed clinical and patient facing websites for several CCGs across London.</p>
+            <p>For more information please contact <a href="mailto:admin@medindex.co.uk">admin@medindex.co.uk</a></p>
 
-        </div>
+            <small class="footer-text">
+                Medindex Ltd is a company registered in England and Wales with company number 12376470, VAT registration 372569467. &copy; Medindex Ltd 2024.<br />
+                Medindex is compliant with the NHS Digital Technology Assessment Criteria (DTAC) and <a href="/assets/medindex_cyberessentials_certificate_2024.pdf" target="_blank" title="Verify our Cyber Essentials certificate">Cyber Essentials certified</a>.
+            </small>
+
+            </div>
+        </section>
 
     </main>
 
@@ -99,7 +123,8 @@
 
         const slideshow = setInterval(function () {
             document.getElementById("slide2").classList.toggle('active');
-        }, 5000);
+            document.getElementById("slide1").classList.toggle('active');
+        }, 8000);
 
         var classname = document.getElementsByClassName("slide");
 
@@ -108,6 +133,7 @@
                 clearInterval(slideshow);
             }
             document.getElementById("slide2").classList.toggle('active');
+            document.getElementById("slide1").classList.toggle('active');
         };
 
         for (var i = 0; i < classname.length; i++) {

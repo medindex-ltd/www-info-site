@@ -20,7 +20,7 @@ var configuration = {
             ]
           },
           images: [
-              './src/images/**/*.{gif,jpg,png,svg}'
+              './src/images/**/*.{gif,jpg,png,svg,webp}'
           ],
           assets: './static-assets/**/*'
       },

@@ -29,7 +29,7 @@
     
         --explainer-text-lead: 2.4rem;
     
-        --key-features-padding: 7rem 0;
+        --key-features-padding: 7rem 0 4rem 0;
         --key-features-title: 3.2rem;
     
         --footer-text-margin: 8rem 0 0;
@@ -45,5 +45,7 @@
 @import "screenshots";
 @import "explainer-text";
 @import "key-features";
+@import "current-platforms";
+@import "about-footer";
 
 @import "helpers";
