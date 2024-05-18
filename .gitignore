@@ -107,3 +107,6 @@ dist
 
 # Generated output
 output/
+
+# direnv
+.direnv/
