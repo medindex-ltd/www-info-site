@@ -22,5 +22,10 @@
   },
   "dependencies": {
     "gulp-clean-css": "^4.3.0"
+  },
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build",
+    "clean": "gulp clean"
   }
 }
