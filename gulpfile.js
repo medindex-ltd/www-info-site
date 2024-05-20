@@ -1,11 +1,10 @@
+const sass = require('gulp-sass')(require('sass'));
 var gulp = require('gulp'),
-    sass = require('gulp-sass'),
     postcss = require('gulp-postcss'),
     autoprefixer = require('autoprefixer'),
     cssnano = require('cssnano'),
     cleanCSS = require('gulp-clean-css'),
     concat = require('gulp-concat'), // Gulp file concatenation plugin
-    open = require('gulp-open'), // Gulp browser opening plugin
     connect = require('gulp-connect'), // Gulp web server runner plugin
     del = require('del');
 const sourcemaps = require("gulp-sourcemaps");
@@ -21,7 +20,7 @@ var configuration = {
             ]
           },
           images: [
-              './src/images/**/*.{gif,jpg,png,svg}'
+              './src/images/**/*.{gif,jpg,png,svg,webp}'
           ],
           assets: './static-assets/**/*'
       },
@@ -58,7 +57,7 @@ gulp.task('styles', function () {
 
 // Copy images
 gulp.task('images', function () {
-  return gulp.src(configuration.paths.src.images)
+  return gulp.src(configuration.paths.src.images, { encoding: false })
     .pipe(gulp.dest(configuration.paths.dist + '/img'))
     .pipe(connect.reload());
 });
