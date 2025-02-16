@@ -64,7 +64,7 @@ gulp.task('images', function () {
 
 // Copy ancillary assets
 gulp.task('assets', function () {
-  return gulp.src(configuration.paths.src.assets)
+  return gulp.src(configuration.paths.src.assets, { encoding: false })
     .pipe(gulp.dest(configuration.paths.dist + '/assets'));
 });
 
